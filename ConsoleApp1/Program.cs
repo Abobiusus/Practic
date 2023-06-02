@@ -13,7 +13,11 @@ namespace ConsoleApp1
         {
             var subKeyNames = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run");
 
-            Console.WriteLine(subKeyNames);
+            string[] valueNames= subKeyNames.GetValueNames();
+            foreach (var item in valueNames)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
