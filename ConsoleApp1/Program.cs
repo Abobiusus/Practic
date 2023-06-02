@@ -17,6 +17,8 @@ namespace ConsoleApp1
             foreach (var item in valueNames)
             {
                 Console.WriteLine(item);
+                string value = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run", item, null);
+                Console.WriteLine(value);
             }
         }
     }
